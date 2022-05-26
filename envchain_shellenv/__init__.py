@@ -1,4 +1,4 @@
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 __app_name__ = 'envchain-shellenv'
 __description_long__ = (
     'envchain shellenv - prints export statements for your secrets in the keychain'
