@@ -3,7 +3,7 @@
 from . import __app_name__
 import configparser
 from pathlib import Path
-import importlib
+import importlib.util
 
 DEFAULT_CONFIG_DIR = Path.home() / '.config' / __app_name__
 DEFAULT_CONFIG_PATH = DEFAULT_CONFIG_DIR / 'keychain.ini'
