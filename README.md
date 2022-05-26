@@ -21,7 +21,7 @@
 # see https://github.com/sorah/envchain for instructions for your OS.
 
 # install envchain-shellenv
-pipx install envchain-shellenv
+pipx install envchain-shellenv || pip install envchain-shellenv
 
 # creates an example config at ~/.config/envchain-shellenv/keychain.ini
 envchain-shellenv --create-example-config
