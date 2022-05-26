@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "envchain-shellenv"
+version = "0.1.0"
+description = "envchain shellenv - prints export statements for your secrets in the keychain"
+authors = ["Xinyuan Chen <45612704+tddschn@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/tddschn/envchain-shellenv"
+repository = "https://github.com/tddschn/envchain-shellenv"
+classifiers = [
+    "Topic :: Utilities",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Framework :: AsyncIO",
+]
+keywords = ["envchain", "shellenv", "env", "environment", "keychain", "keyring"]
+
+[tool.poetry.scripts]
+envchain-shellenv = "envchain_shellenv.cli:main_sync"
+eesh = "envchain_shellenv.cli:main_sync"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/tddschn/envchain-shellenv/issues"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+keyring = {version = "^23.5.1", extras = ["keyring"]}
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^22.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
