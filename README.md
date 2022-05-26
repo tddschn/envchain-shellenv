@@ -4,6 +4,8 @@
 
 so that you can do `eval "$(envchain-shellenv)"`.
 
+Use with [`envchain`](https://github.com/sorah/envchain) for maximum convenience.
+
 - [envchain shellenv](#envchain-shellenv)
   - [Quick Start](#quick-start)
   - [Installation](#installation)
@@ -18,9 +20,9 @@ so that you can do `eval "$(envchain-shellenv)"`.
 
 ## Quick Start
 ```bash
-# install envchain first
+# install envchain first, and add your secrets to your keychain app via envchain
 # for macOS with Homebrew, run `brew install envchain'.
-# see https://github.com/sorah/envchain for instructions for your OS.
+# see https://github.com/sorah/envchain for more details.
 
 # install envchain-shellenv
 pipx install envchain-shellenv || pip install envchain-shellenv
