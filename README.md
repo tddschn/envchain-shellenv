@@ -2,6 +2,8 @@
 
 `envchain-shellenv` - prints export statements for your secrets in the keychain
 
+so that you can do `eval "$(envchain-shellenv)"`.
+
 - [envchain shellenv](#envchain-shellenv)
   - [Quick Start](#quick-start)
   - [Installation](#installation)
