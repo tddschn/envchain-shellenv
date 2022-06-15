@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 
+from .types import EnvVar, EnvchainNamespace, EnvchainEnv, EnvchainTuple
+
 
 def export_envchain_keyring(
-    env_var: str,
-    envchain_namespace: str,
-    envchain_env: str,
+    env_var: EnvVar,
+    envchain_namespace: EnvchainNamespace,
+    envchain_env: EnvchainEnv,
 ) -> str:
     """set env_var to the password of envchain_env of account envchain-{envchain_namespace} in the keychain
     return a string to be eval'd by the shell"""
@@ -15,7 +17,9 @@ def export_envchain_keyring(
 
 
 async def export_envchain_envchain(
-    env_var: str, envchain_namespace: str, envchain_env: str
+    env_var: EnvVar,
+    envchain_namespace: EnvchainNamespace,
+    envchain_env: EnvchainEnv,
 ) -> str:
     """get the env vars with envchain executable"""
     import asyncio
@@ -37,9 +41,7 @@ async def export_envchain_envchain(
     # return f"export {env_var}='{password}'"
 
 
-async def export_envchain_keyring_multi(
-    envchain_pairs: list[tuple[str, str, str]]
-) -> str:
+async def export_envchain_keyring_multi(envchain_pairs: list[EnvchainTuple]) -> str:
     import asyncio
     from concurrent.futures import ThreadPoolExecutor
     from functools import partial
@@ -54,9 +56,7 @@ async def export_envchain_keyring_multi(
     return '\n'.join(export_commands)
 
 
-async def export_envchain_envchain_multi(
-    envchain_pairs: list[tuple[str, str, str]]
-) -> str:
+async def export_envchain_envchain_multi(envchain_pairs: list[EnvchainTuple]) -> str:
     import asyncio
 
     tasks = [
