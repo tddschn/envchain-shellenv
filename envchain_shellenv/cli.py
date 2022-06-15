@@ -15,6 +15,7 @@ from .config import (
     DEFAULT_CONFIG_PATH,
     create_example_config,
 )
+from .core import unset_env_vars
 
 
 def get_args():
@@ -56,6 +57,8 @@ def get_args():
         choices=use_dict.keys(),
     )
 
+    parser.add_argument('-U', '--unset', help='Unset env vars', action='store_true')
+
     parser.add_argument(
         '--version', '-V', action='version', version='%(prog)s {}'.format(__version__)
     )
@@ -76,6 +79,10 @@ async def main(args) -> None:
     if section:
         config = {section: config[section]}
     envchain_pairs = extract_envchain_pairs(config)
+    if args.unset:
+        unset_commands = unset_env_vars(envchain_pairs)
+        print(unset_commands)
+        return
     export_commands = await export_envchain_multi(envchain_pairs)
     print(export_commands)
 

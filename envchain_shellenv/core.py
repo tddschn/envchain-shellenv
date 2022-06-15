@@ -64,3 +64,9 @@ async def export_envchain_envchain_multi(envchain_pairs: list[EnvchainTuple]) ->
     ]
     export_commands = await asyncio.gather(*tasks)
     return '\n'.join(export_commands)
+
+
+def unset_env_vars(env_vars: list[EnvVar | EnvchainTuple]) -> str:
+    if isinstance(env_vars[0], EnvVar):
+        return '\n'.join(f"unset {env_var}" for env_var in env_vars)
+    return '\n'.join(f"unset {env_var}" for env_var, _, _ in env_vars)
