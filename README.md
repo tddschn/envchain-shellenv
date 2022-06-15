@@ -15,7 +15,6 @@ Use with [`envchain`](https://github.com/sorah/envchain) for maximum convenience
   - [Usage:](#usage)
   - [Example](#example)
     - [Example config file](#example-config-file)
-    - [Example output](#example-output)
   - [Develop](#develop)
 
 ## Quick Start
@@ -93,28 +92,17 @@ Created by Teddy Xinyuan Chen || Homepage: https://github.com/tddschn/envchain-s
 
 ### Example config file
 
-```ini
-[envchain]
-; TEST = test TEST_SEC
-; this set env var TEST to the TEST_SEC secret in envchain's test namespace,
-; or the password of account TEST_SEC of test in your keychain app, e.g. Keychain Access.app on macOS.
+```yaml
+test:
+  TEST: TEST_SEC
+  MULTILINE:
+aws: # the envchain namespace
+  AWS_SECRET_KEY:
+  AWS_ROOT_PW: envchain-aws-root-pw
+  # sets AWS_ROOT_PW env var to envchain-aws-root-pw in the aws namespace of envchain
+no-item:
+  # this will be skipped
 
-; see envchain: https://github.com/sorah/envchain for more details.
-
-
-
-; MULTILINE = test
-; this shorthand is equivalent to MULTILINE = test MULTILINE
-
-GH_API_TOKEN = github github-api-token
-MY_SERVICE_API_KEY = my_service
-```
-
-### Example output
-
-```bash
-export GH_API_TOKEN='***'
-export MY_SERVICE_API_KEY='***'
 ```
 
 

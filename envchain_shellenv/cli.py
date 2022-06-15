@@ -32,6 +32,16 @@ def get_args():
     )
 
     parser.add_argument(
+        '-s',
+        '--section',
+        '--envchain-namespace',
+        help='''Only export from this section (aka envchain namespace) in the config.
+        The choices shown are for the config file at the default location.''',
+        type=str,
+        choices=read_config(DEFAULT_CONFIG_PATH).keys(),
+    )
+
+    parser.add_argument(
         '--create-example-config',
         action='store_true',
         help='create example config file',
@@ -60,8 +70,11 @@ async def main(args) -> None:
         return
     use = args.use
     config_path = args.config
+    section = args.section
     export_envchain_multi = use_dict[use]
     config = read_config(config_path)
+    if section:
+        config = {section: config[section]}
     envchain_pairs = extract_envchain_pairs(config)
     export_commands = await export_envchain_multi(envchain_pairs)
     print(export_commands)

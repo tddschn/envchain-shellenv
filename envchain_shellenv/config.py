@@ -20,7 +20,7 @@ def create_example_config():
     shutil.copy(EXAMPLE_CONFIG_PATH, DEFAULT_CONFIG_PATH)
 
 
-def read_config(config_file: Path) -> dict:
+def read_config(config_file: Path) -> ConfigDict:
     from yaml import safe_load
 
     config = safe_load(config_file.read_text())

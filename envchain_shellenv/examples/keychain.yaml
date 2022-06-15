@@ -1,7 +1,9 @@
 test:
   TEST: TEST_SEC
   MULTILINE:
-aws:
+aws: # the envchain namespace
   AWS_SECRET_KEY:
-  AWS_ROOT_PW:
+  AWS_ROOT_PW: envchain-aws-root-pw
+  # sets AWS_ROOT_PW env var to envchain-aws-root-pw in the aws namespace of envchain
 no-item:
+  # this will be skipped
