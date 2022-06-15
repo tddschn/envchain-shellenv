@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "envchain-shellenv"
-version = "1.0.0"
+version = "1.0.1"
 description = "envchain shellenv - prints export statements for your secrets in the keychain"
 authors = ["Xinyuan Chen <45612704+tddschn@users.noreply.github.com>"]
 license = "MIT"
