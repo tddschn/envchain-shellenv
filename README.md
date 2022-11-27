@@ -1,5 +1,7 @@
 # envchain shellenv
 
+Injecting secrets from envchain / keychain into your shell as environment variables, in batch.
+
 `envchain-shellenv` - prints export statements for your secrets in the keychain
 
 so that you can do `eval "$(envchain-shellenv)"`.
