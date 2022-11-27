@@ -24,16 +24,15 @@ eesh = "envchain_shellenv.cli:main_sync"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-keyring = {version = "^23.5.1", extras = ["keyring"]}
+keyring = { version = "^23.5.1", extras = ["keyring"] }
 PyYAML = "^6.0"
 
 [tool.poetry.group.dev.dependencies]
 ipython = "^8.4.0"
 rich = "^12.4.4"
-
-[tool.poetry.dev-dependencies]
-pytest = "^5.2"
 black = "^22.3.0"
+pytest = "^7.2.0"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
