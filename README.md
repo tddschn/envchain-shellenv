@@ -110,6 +110,8 @@ no-item:
 
 ## Develop
 
+See [`core.py`](envchain_shellenv/core.py) for the main logic.
+
 ```
 $ git clone https://github.com/tddschn/envchain-shellenv.git
 $ cd envchain-shellenv
